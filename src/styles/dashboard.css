@@ -1,0 +1,104 @@
+.order_type{
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    height: auto;
+    min-height: 100vh;
+    background: url(../images/login.png) no-repeat left top;
+    background-size: contain;
+}
+.requst{
+    margin-right: 5px;
+}
+.table_front .location img {
+    margin-top: 10px;
+    height: 85px;
+}
+.table_front{
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    height: 100%;
+    width: 50%;
+    overflow: auto;
+    border-radius: 4px;
+}
+.hbtn button{
+    border: 1px solid;
+}
+
+.center_content {
+    text-align: center;
+}
+.bg_table_front .sram_table_logo {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+.btn-default{
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.table_front .bbq{
+    background-color: #fff;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 30px;
+    margin-left: 0%;
+    border: 1px solid #4b2d0a;
+    border-radius: 4px;
+    font-family: 'source_sans_proregular';
+    font-weight: bold;
+    position: relative;
+}
+.table_front button:enabled{
+    box-shadow: 9px 11px 12px -5px rgb(148 124 96);
+}
+.table_front .location{
+    background-color: #fff;
+    width: 170px;
+    height: 170px;
+    margin-bottom: 30px;
+    margin-left: 0%;
+    border: 1px solid #4b2d0a;
+    border-radius: 4px;
+    font-family: 'source_sans_proregular';
+    font-weight: bold;
+    position: relative;
+    margin-right: 10px;
+}
+.table_front .location:hover {
+    box-shadow: inset 0px 0px 60px 0px #4b2d0a;
+}
+
+.table_front .location:focus {
+    outline: none;
+}
+
+.table_front .bbq p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'source_sans_proregular';
+    color: #4b2d0a;
+}
+
+.table_front .location p {
+    margin-top: 10px;
+    font-size: 18px;
+    font-family: 'source_sans_proregular';
+    color: #4b2d0a;
+}
+.bg_table_front {
+    background-color: #ccc;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+.order_type{
+    height: 100vh;
+}

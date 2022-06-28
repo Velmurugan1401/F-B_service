@@ -1,0 +1,22 @@
+.dinein_lable
+{
+    width: 40%;
+    padding-top: 10px;padding-left: 5px;background-color: rgb(16, 16, 122);color:white;
+}
+.kotprint{
+    padding:0px;
+}
+.collapse .cstyle{
+    border:1px solid lightgray;padding:5px;
+}
+.himage{
+    width: 30px;
+}
+
+.span_color {
+    padding-left: 5px;
+}
+
+.status{
+    color: blue !important;
+}

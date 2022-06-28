@@ -1,0 +1,10 @@
+.table-name{
+    padding-top: 10px; text-align: center; 
+    height: 50px;
+    width: 100px;
+    background-color: rgb(16, 16, 122);
+    color:white;
+}
+.coid{
+    border:1px solid lightgray;padding:5px;
+}

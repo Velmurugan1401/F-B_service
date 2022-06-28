@@ -1,0 +1,17 @@
+.card-title {
+color: #4bad7f;
+}
+.not-avilable
+{
+    padding-left: 10px;
+    color: red;
+}
+.not-avilable i,.avl i{
+    font-size: 13px;
+}
+.avl{
+    padding-left: 10px;
+    color: #4bad7f;
+}
+
+
