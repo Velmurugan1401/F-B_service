@@ -1,0 +1,24 @@
+.card img{
+    width: 100%;
+
+}
+.card.nav-item{
+    display: inline-block;
+    /* padding: 0px !important; */
+    text-align: center;
+   border: none;
+}
+.card .nav-link{
+    border: 1px solid #ded1c1;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: #A77A43;
+}
+.submenu img{
+    width: 100%;
+    
+}
+.submenu{
+    margin-left: 5px;
+}

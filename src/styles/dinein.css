@@ -1,0 +1,103 @@
+.tableright .table_id_small .ribbon {
+    position: absolute;
+    right: -6%;
+    top: -5%;
+    z-index: 1;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+    text-align: right;
+}
+
+.table_id_small img {
+    margin-top: 10px;
+    width: 100%;
+    padding: 4px 12px;
+}
+.tableright {
+    background-color: #fff;
+    padding-bottom: 20px;
+}
+.well {
+    padding: 10px;
+    color: #542f05;
+    background-color: #efefef;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.well {
+    border: 1px solid #ddd;
+    background-color: #f6f6f6 !important;
+    box-shadow: none;
+    border-radius: 0px;
+}
+.table_id_small:hover {
+    box-shadow: inset 0px 0px 10px 0px #4b2d0a;
+}
+h2 {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: bold;
+}
+.green_class {
+    background: #D9F596 !important;
+    transition: 0.25s ease;
+}
+.table_id_small {
+    padding: 5px;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+    width: 80px;
+    height: 80px;
+    position: relative;
+    float: left;
+}
+.table_id_small p {
+    font-size: 12px;
+    margin-top: 5px;
+    font-family: 'source_sans_proregular';
+    font-weight: bold;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+}
+#content {
+    background: none;
+    margin-left: 0;
+    padding-top: 5px;
+    position: relative;
+    float: left;
+    width: 100%;
+    height: auto;
+}
+.ribbon {
+    position: absolute;
+    right: -6%;
+    top: -5%;
+    z-index: 1;
+    overflow: hidden;
+    width: 75px;
+    height: 75px;
+    text-align: right;
+}
+.ribbon span {
+    font-size: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    line-height: 20px;
+    transform: rotate(45deg);
+    width: 100px;
+    display: block;
+    background: #79A70A;
+    background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+    box-shadow: 0 3px 10px -5px rgb(0 0 0);
+    position: absolute;
+    top: 19px;
+    right: -21px;
+}
+.green_ribbon span {
+    background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+}

@@ -13,6 +13,7 @@ import Menu from "./componets/menulist"
 import Billing from "./componets/billing"
 import Order from "./componets/order"
 import Report from "./componets/report"
+import Takeaway from './componets/takeaway';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/billing" element={<><Header/><Billing/></>} />
         <Route path="/Order" element={<><Header/><Order/></>} />
         <Route path="/report" element={<><Header/><Report/></>} />
+        <Route path="/takeaway" element={<><Header/><Takeaway/></>} />
       </Routes>
     </div>
   );
