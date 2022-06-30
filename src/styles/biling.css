@@ -1,0 +1,27 @@
+.sale{
+    height: 100%;
+    border-radius: 0px;
+}
+.payment{
+    width: 100%;
+    color: white;
+}
+.button1{
+    width: 100%;
+
+}
+.button1.active:focus{
+    background-color: #0dcaf0 !important;
+ 
+}
+
+  .btn-check:focus+.btn, .btn:focus{
+    box-shadow: none;
+    /* color: #fff !important; */
+  }
+  .btn-check:active+.btn:focus, .btn-check:checked+.btn:focus, .btn.active:focus, .btn.show:focus, .btn:active:focus{
+    box-shadow: none;
+  }
+  .btn-check:active+.btn, .btn-check:checked+.btn, .btn.active, .btn.show, .btn:active{
+    color: #fff !important;
+  }

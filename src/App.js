@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { Routes, Route , Navigate} from "react-router-dom";
@@ -14,6 +13,8 @@ import Billing from "./componets/billing"
 import Order from "./componets/order"
 import Report from "./componets/report"
 import Takeaway from './componets/takeaway';
+import BBQ from './componets/bbq';
+import Reports from './componets/report';
 
 function App() {
   return (
@@ -25,10 +26,12 @@ function App() {
         <Route path="/dinein" element={<><Header/><Dinein/></>} />
         <Route path="/kitchen" element={<><Header/><Kitchen /></>} />
         <Route path="/menu" element={<><Header/><Menu/></>} />
-        <Route path="/billing" element={<><Header/><Billing/></>} />
+        <Route path="/billing/:id" element={<><Header/><Billing/></>} />
         <Route path="/Order" element={<><Header/><Order/></>} />
         <Route path="/report" element={<><Header/><Report/></>} />
-        <Route path="/takeaway" element={<><Header/><Takeaway/></>} />
+        <Route path="/menu/:id" element={<><Header/><Takeaway/></>} />
+        <Route path="/bbq" element={<><Header/><BBQ/></>} />
+        <Route path="/pos/:id" element={<><Header/><Reports/></>} />
       </Routes>
     </div>
   );

@@ -1,230 +1,962 @@
-import '../styles/kitchen.css';
-import Collapse from "react-bootstrap/Collapse"
-import { useState } from 'react';
-import Cloche from "../images/cloche.png"
-import secount from "../images/2.jpg"
-import one from "../images/1.jpg"
+import { useState } from "react";
+import Collapse from "react-bootstrap/Collapse";
+import "../styles/kitchen.css";
+import { Button, Breadcrumb } from "react-bootstrap";
+import Table1 from "../images/cloche.png";
 
+import one from "../images/1.jpg";
+import { Link } from "react-router-dom";
+import Modal from "react-bootstrap/Modal";
 
 function Kitchen() {
-  const [show , setShow] = useState(true)
-  const showmodal = ()=>{
-    setShow(!show)
-  }
-  const closemodal = ()=>{
-    setShow(false)
-  }
+  const [show1, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+  const [show, setShow] = useState([true, false, false, false]);
+  const showmodal = (tab) => {
+    const prevState = show;
+    const state = prevState.map((x, index) => (tab === index ? !x : false));
+
+    setShow(state);
+  };
+
   return (
-    <div className="Kitchen mt-5">
-
+    <div className="mt-5">
       <div class="container">
-        <div class="row"  >
+        <Breadcrumb>
+          <Breadcrumb.Item href="#">
+            {" "}
+            <Link to="/dashboard">Dashboard</Link>
+          </Breadcrumb.Item>
 
-          <div class="col-sm-12 col-md-4 col-lg-4" >
-            <a href="javascript:void(0)" onClick={showmodal} data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" >
+          <Breadcrumb.Item active>Kitchen</Breadcrumb.Item>
+        </Breadcrumb>
+        <hr />
 
-              <button class=" button1" type="submit">  SUKI AREA</button>
+        <div class="row mb-3">
+          <div class="col-lg-2 col-md-3 col-sm-12 ">
+            <a
+              href="javascript:void(0)"
+              onClick={(e) => {
+                showmodal(0);
+              }}
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <Button size="sm" variant="outline-info" className="button1 ">
+                {" "}
+                Suki Area{" "}
+              </Button>
             </a>
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4" >
-            <a href="javascript:void(0)" onClick={showmodal}  data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" >
 
-              <button class=" button1" type="submit">  CHEF AREA</button>
+          <div class="col-lg-2 col-md-3 col-sm-12 ">
+            <a
+              href="javascript:void(0)"
+              onClick={() => {
+                showmodal(1);
+              }}
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <Button size="sm" variant="outline-info" className="button1 ">
+                {" "}
+                Chef Area
+              </Button>
             </a>
           </div>
-          <div class="col-sm-12 col-md-4 col-lg-4" >
-            <a href="javascript:void(0)" onClick={showmodal}  data-bs-toggle="collapse" aria-expanded="false" aria-controls="collapseExample" >
-
-              <button class=" button1" type="submit">BEER  BAR AREA</button>
-            </a>
+          <div class="col-lg-2 col-md-3 col-sm-12 ">
+            <div>
+              <a
+                href="javascript:void(0)"
+                onClick={(e) => {
+                  showmodal(2);
+                }}
+                data-bs-toggle="collapse"
+                aria-expanded="false"
+                aria-controls="collapseExample"
+              >
+                <Button size="sm" variant="outline-info" className="button1">
+                  {" "}
+                  Bar Area
+                </Button>
+              </a>
+            </div>
           </div>
         </div>
 
-        <Collapse in={show}>
-        <div class="collapse" id="collapseExample" >
-
-          <div class="row mt-4" >
-            <div class="col-md-6 col-sm-12 p-0" >
-              <div class="dineintitle">
-                <div class="input-group">
-                  <div class="input-group-text" id="btnGroupAddon">
-                    <img className='himage' src={Cloche} alt="" />
-                  </div>
-                  <lable type="text" class="dinein_lable" aria-describedby="btnGroupAddon">FADF89405986HD66B</lable>
-                  <div class="tableno">
-                    <a href="dinein_table.html">
-                      <button class="table_button">Table1</button>
-                    </a>
-                  </div>
+        <Collapse in={show[0]}>
+          <div class="collapse" id="collapseExample">
+            <div class="row mb-3 mt-5">
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <div class="table_head">
+                  <img src={Table1} alt="" className="table_image1" />
+                  <span class="odr_name">ORDER12352545</span>
                 </div>
               </div>
-            </div>
-            <div class="col-md-6 col-sm-12 kotprint" >
-              <button class="red_button print" type="submit">Kot Print</button>
-            </div>
-          </div>
-          <div class="row cstyle" >
-
-            <div class="col-sm-12 col-md-6 col-lg-6">
-              <input type="checkbox" />
-              <span class="span_color pl-2">Superadmin</span>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-6 kotprint">
-              <span class="span_color">Status:
-                <a href="javascript:void(0)" className='status'>Open</a>
-              </span>
-              <button class="table_button">Print</button>
-
-
-            </div>
-          </div>
-          <div class="row cstyle" >
-
-            <div class="col-sm-12 col-md-4 col-lg-4">
-              <img src={one} alt="" />
-              <label>Itly</label>
-              <button class="inprocess">Inprocess</button>
-
-            </div>
-            <div class="col-sm-12 col-md-2 col-lg-2 kotprint1">
-              <span >
-                <span >
-                  <input type="checkbox" />
-                  <button class="red_button">Cancel</button>
-                </span>
-              </span>
-
-
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-4">
-              <img src={secount} alt=""  />
-              <label>Itly</label>
-              <button class="inprocess">Inprocess</button>
-
-            </div>
-            <div class="col-sm-12 col-md-2 col-lg-2 kotprint1">
-              <span >
-                <span >
-                  <input type="checkbox" />
-                  <button class="red_button">Cancel</button>
-                </span>
-              </span>
-
-
-            </div>
-          </div>
-          <div class="row mt-5" >
-            <div class="col-md-6 col-sm-12 p-0" >
-              <div class="dineintitle">
-                <div class="input-group">
-                  <div class="input-group-text" id="btnGroupAddon">
-                    <img className='himage' src={Cloche} alt=""  />
-                  </div>
-                  <lable type="text" class="dinein_lable" aria-describedby="btnGroupAddon" >FADF89405986HD66B</lable>
-                  <div class="tableno">
-                    <a href="dinein_table.html">
-                      <button class="table_button">Table2</button>
-                    </a>
-                  </div>
-                </div>
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <Button variant="warning" size="sm" className=" table-button">
+                  Table 1
+                </Button>
+              </div>
+              <div class=" col-sm-12 col-md-6 col-lg-6 kotprint" align="right">
+                <Button
+                  variant="danger"
+                  size="sm"
+                  className=" table-button"
+                  onClick={handleShow}
+                >
+                  Kot Print
+                </Button>
               </div>
             </div>
-            <div class="col-md-6 col-sm-12 kotprint" >
-              <button class="red_button print" type="submit">Kot Print</button>
+
+            <div class="row coid ">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <input type="checkbox" />
+                &nbsp;
+                <span class="span_color">Superadmin</span>
+              </div>
+              <div class="d-flex justify-content-end  col-sm-12 col-md-6 col-lg-6 kotprint">
+                <span class="span_color">
+                  Status:
+                  <a href="http:/">Open</a>
+                </span>
+
+                <Button
+                  size="sm"
+                  variant="outline-warning"
+                  className=" table-button"
+                >
+                  Print
+                </Button>
+              </div>
             </div>
-          </div>
+            <div class="row coid mb-3">
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
 
-          <div class="row cstyle" >
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
 
-            <div class="col-sm-12 col-md-6 col-lg-6">
-              <input type="checkbox" />
-              <span class="span_color">Superadmin</span>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-6 kotprint">
-              <span class="span_color">Status:
-                <a href="http:/" className='status'>Open</a>
-              </span>
-              <button class="table_button">Print</button>
-
-
-            </div>
-          </div>
-          <div class="row cstyle" >
-
-            <div class="col-sm-12 col-md-4 col-lg-4">
-              <img src = {one} alt=""  />
-              <label>Itly</label>
-              <button class="inprocess">Inprocess</button>
-
-            </div>
-            <div class="col-sm-12 col-md-2 col-lg-2 kotprint1">
-              <span >
-                <span >
+                <span className="inprocess">
                   <input type="checkbox" />
-                  <button class="red_button">Cancel</button>
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
                 </span>
-              </span>
+              </div>
 
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
 
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-4">
-              <img src={secount} alt=""  />
-              <label>Itly</label>
-              <button class="inprocess">Inprocess</button>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
 
-            </div>
-            <div class="col-sm-12 col-md-2 col-lg-2 kotprint1">
-              <span >
-                <span >
+                <span className="inprocess">
                   <input type="checkbox" />
-                  <button class="red_button">Cancel</button>
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
                 </span>
-              </span>
+              </div>
 
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
 
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+            </div>
+
+            <div class="row mb-3 mt-5">
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <div class="table_head">
+                  <img src={Table1} alt="" className="table_image1" />
+                  <span class="odr_name">ORDER12352545</span>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <Button variant="warning" size="sm" className=" table-button">
+                  Table 2
+                </Button>
+              </div>
+              <div class=" col-sm-12 col-md-6 col-lg-6 kotprint" align="right">
+                <Button
+                  variant="danger"
+                  size="sm"
+                  className=" table-button"
+                  onClick={handleShow}
+                >
+                  Kot Print
+                </Button>
+              </div>
+            </div>
+
+            <div class="row coid ">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <input type="checkbox" />
+                &nbsp;
+                <span class="span_color">Superadmin</span>
+              </div>
+              <div class="d-flex justify-content-end  col-sm-12 col-md-6 col-lg-6 kotprint">
+                <span class="span_color">
+                  Status:
+                  <a href="http:/">Open</a>
+                </span>
+
+                <Button
+                  size="sm"
+                  variant="outline-warning"
+                  className=" table-button"
+                >
+                  Print
+                </Button>
+              </div>
+            </div>
+            <div class="row coid mb-3">
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
             </div>
           </div>
-
-          <div class="row cstyle" >
-
-            <div class="col-sm-12 col-md-4 col-lg-4">
-              <img src={one} alt=""  />
-              <label>Itly</label>
-              <button class="inprocess">Inprocess</button>
-
-            </div>
-            <div class="col-sm-12 col-md-2 col-lg-2 kotprint1">
-              <span >
-                <span >
-                  <input type="checkbox" />
-                  <button class="red_button">Cancel</button>
-                </span>
-              </span>
-
-
-            </div>
-            <div class="col-sm-12 col-md-4 col-lg-4">
-              <img  src={secount} alt="" style={{width: "50px"}} /> 
-              <label>Itly</label>
-              <button class="inprocess">Inprocess</button>
-
-            </div>
-            <div class="col-sm-12 col-md-2 col-lg-2 kotprint1">
-              <span >
-                <span >
-                  <input type="checkbox" ></input>
-                  <button class="red_button">Cancel</button>
-                </span>
-              </span>
-
-
-            </div>
-          </div>
-        </div>
         </Collapse>
 
-      </div >
-    </div >
+        <Collapse in={show[1]}>
+          <div class="collapse" id="collapseExample">
+            <div class="row mb-3 mt-5">
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <div class="table_head">
+                  <img src={Table1} alt="" className="table_image1" />
+                  <span class="odr_name">ORDER12352545</span>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <Button variant="warning" size="sm" className=" table-button">
+                  Table 1
+                </Button>
+              </div>
+              <div class=" col-sm-12 col-md-6 col-lg-6 kotprint" align="right">
+                <Button
+                  variant="danger"
+                  size="sm"
+                  className=" table-button"
+                  onClick={handleShow}
+                >
+                  Kot Print
+                </Button>
+              </div>
+            </div>
+
+            <div class="row coid ">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <input type="checkbox" />
+                &nbsp;
+                <span class="span_color">Superadmin</span>
+              </div>
+              <div class="d-flex justify-content-end  col-sm-12 col-md-6 col-lg-6 kotprint">
+                <span class="span_color">
+                  Status:
+                  <a href="http:/">Open</a>
+                </span>
+
+                <Button
+                  size="sm"
+                  variant="outline-warning"
+                  className=" table-button"
+                >
+                  Print
+                </Button>
+              </div>
+            </div>
+            <div class="row coid mb-3">
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+            </div>
+            <div class="row mb-3 mt-5">
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <div class="table_head">
+                  <img src={Table1} alt="" className="table_image1" />
+                  <span class="odr_name">ORDER12352545</span>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <Button variant="warning" size="sm" className=" table-button">
+                  Table 2
+                </Button>
+              </div>
+              <div class=" col-sm-12 col-md-6 col-lg-6 kotprint" align="right">
+                <Button
+                  variant="danger"
+                  size="sm"
+                  className=" table-button"
+                  onClick={handleShow}
+                >
+                  Kot Print
+                </Button>
+              </div>
+            </div>
+            <div class="row coid ">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <input type="checkbox" />
+                &nbsp;
+                <span class="span_color">Superadmin</span>
+              </div>
+              <div class="d-flex justify-content-end  col-sm-12 col-md-6 col-lg-6 kotprint">
+                <span class="span_color">
+                  Status:
+                  <a href="http:/">Open</a>
+                </span>
+                <Button
+                  size="sm"
+                  variant="outline-warning"
+                  className=" table-button"
+                >
+                  Print
+                </Button>
+              </div>
+            </div>
+            <div class="row coid mb-3">
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </Collapse>
+        <Collapse in={show[2]}>
+          <div class="collapse" id="collapseExample">
+            <div class="row mb-3 mt-5">
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <div class="table_head">
+                  <img src={Table1} alt="" className="table_image1" />
+                  <span class="odr_name">ORDER12352545</span>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <Button variant="warning" size="sm" className=" table-button">
+                  Table 1
+                </Button>
+              </div>
+              <div class=" col-sm-12 col-md-6 col-lg-6 kotprint" align="right">
+                <Button
+                  variant="danger"
+                  size="sm"
+                  className=" table-button"
+                  onClick={handleShow}
+                >
+                  Kot Print
+                </Button>
+              </div>
+            </div>
+            <div class="row coid ">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <input type="checkbox" />
+                &nbsp;
+                <span class="span_color">Superadmin</span>
+              </div>
+              <div class="d-flex justify-content-end  col-sm-12 col-md-6 col-lg-6 kotprint">
+                <span class="span_color">
+                  Status:
+                  <a href="http:/">Open</a>
+                </span>
+
+                <Button
+                  size="sm"
+                  variant="outline-warning"
+                  className=" table-button"
+                >
+                  Print
+                </Button>
+              </div>
+            </div>
+            <div class="row coid mb-3">
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+            </div>
+            <div class="row mb-3 mt-5">
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <div class="table_head">
+                  <img src={Table1} alt="" className="table_image1" />
+                  <span class="odr_name">ORDER12352545</span>
+                </div>
+              </div>
+              <div class="col-md-4 col-sm-12 col-lg-3">
+                <Button variant="warning" size="sm" className=" table-button">
+                  Table 2
+                </Button>
+              </div>
+              <div class=" col-sm-12 col-md-6 col-lg-6 kotprint" align="right">
+                <Button
+                  variant="danger"
+                  size="sm"
+                  className=" table-button"
+                  onClick={handleShow}
+                >
+                  Kot Print
+                </Button>
+              </div>
+            </div>
+            <div class="row coid ">
+              <div class="col-sm-12 col-md-6 col-lg-6">
+                <input type="checkbox" />
+                &nbsp;
+                <span class="span_color">Superadmin</span>
+              </div>
+              <div class="d-flex justify-content-end  col-sm-12 col-md-6 col-lg-6 kotprint">
+                <span class="span_color">
+                  Status:
+                  <a href="http:/">Open</a>
+                </span>
+                <Button
+                  size="sm"
+                  variant="outline-warning"
+                  className=" table-button"
+                >
+                  Print
+                </Button>
+              </div>
+            </div>
+            <div class="row coid mb-3">
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+
+              <div class="col-sm-12 col-md-6 col-lg-6 mb-3">
+                <img src={one} alt="" className="table_image2" />
+                <label>Aballon Slice</label>
+                <span class="dollar">$2.0</span>
+
+                <Button
+                  variant="outline-success"
+                  size="sm"
+                  className="inprocess"
+                >
+                  Inprocess
+                </Button>
+
+                <span className="inprocess">
+                  <input type="checkbox" />
+                  <Button
+                    variant="outline-danger"
+                    size="sm"
+                    className="inprocess"
+                  >
+                    Cancel
+                  </Button>
+                </span>
+              </div>
+            </div>
+          </div>
+        </Collapse>
+        <Modal
+          show={show1}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body align="center">
+            <p> Select Order Item</p>
+            <Button variant="info" size="sm" onClick={handleClose}>
+              OK
+            </Button>
+          </Modal.Body>
+        </Modal>
+      </div>
+    </div>
   );
 }
 

@@ -13,7 +13,8 @@
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
     color: var(--bs-nav-pills-link-active-color);
-    background-color: #A77A43;
+    background-color: #C7A073;
+    color:#fff;
 }
 .submenu img{
     width: 100%;
@@ -21,4 +22,17 @@
 }
 .submenu{
     margin-left: 5px;
+}
+
+.modal-container{
+    max-width: 50% !important;
+}
+
+.allowloyalty{
+    padding-top: 30px;
+    justify-content: center;
+}
+.allowloyalty .noloyal{
+    margin-left: 10px;
+    margin-right: 10px;
 }

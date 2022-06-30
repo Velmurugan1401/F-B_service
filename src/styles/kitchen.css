@@ -1,22 +1,42 @@
-.dinein_lable
-{
-    width: 40%;
-    padding-top: 10px;padding-left: 5px;background-color: rgb(16, 16, 122);color:white;
+.table-name{
+    padding-top: 10px; text-align: center; 
+    height: 50px;
+    width: 100px;
+    background-color: rgb(16, 16, 122);
+    color:white;
 }
-.kotprint{
-    padding:0px;
-}
-.collapse .cstyle{
+.coid{
     border:1px solid lightgray;padding:5px;
 }
-.himage{
-    width: 30px;
+.table_head{
+    background-color: gainsboro;
+    border: 1px solid lightgray;
+}
+.odr_name{
+    padding-left: 15px;
+}
+.table-button{
+    margin-left: 15px;
+
+}
+.table_image1{
+    width:20%;
+    background-color: rgb(255, 181, 71);
+}
+.table_image2{
+    width:13%;
+   
 }
 
-.span_color {
-    padding-left: 5px;
+.dollar {
+    background-color: rgb(185, 192, 90);
+    color: #fff;
+    height: 30px;
+    padding: 3px;
+    border: 1px solid olive;
+    margin-left: 20px;
+   
 }
-
-.status{
-    color: blue !important;
+.inprocess{
+    margin-left: 20px;
 }

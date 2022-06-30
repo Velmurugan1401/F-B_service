@@ -1,16 +1,6 @@
 import '../styles/dashboard.css';
-import BBQ from "../images/3.png"
-import Din from "../images/1.png"
-import Takeaway from "../images/8.png"
-import doordelivery from "../images/5.png"
-import orderr from "../images/4.png"
-import Hitchen from "../images/7.png"
-import Billings from "../images/6.png"
-import Repotss from "../images/Report.png"
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-import Modal from "react-bootstrap/Modal"
-import Button from "react-bootstrap/Button"
 
 
 function Dashboard() {
@@ -18,6 +8,9 @@ function Dashboard() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  useEffect(()=>{
+    document.title = "POS Module | Srampos"
+  },[])
 
   return (
     <div id="wrapper" class="order_type">
@@ -35,7 +28,7 @@ function Dashboard() {
 
 
           </div>
-          <Link to="/dinein">
+          <Link to="/bbq">
           <button class="location bbq" value="1" tabindex="-1">
             <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/bbq.png" />
             <p>BBQ</p>
@@ -47,27 +40,36 @@ function Dashboard() {
             <p>Dine In </p>
           </button>
           </Link>
-
+          <Link to="/menu/takeaway">
           <button class="location take_away" value="2" tabindex="-1">
             <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/take_away.png" />
             <p>Take Away </p>
           </button>
+          </Link>
+          <Link to="/menu/order">
           <button class="location door_delivery" value="3" tabindex="-1">
             <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/delivery.png" />
             <p>Door Delivery </p>
           </button>
+          </Link>
+          <Link to="/order">
           <button class="location" value="4" data-title="order_table" tabindex="-1">
             <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/order.png" />
             <p>Orders </p>
           </button>
+          </Link>
+          <Link to="/kitchen">
           <button class="location" value="5" tabindex="-1">
             <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/kitchenpos.png" />
             <p>Kitchen </p>
           </button>
+          </Link>
+          <Link to="/billing/dinein">
           <button class="location" value="6" tabindex="-1">
             <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/billing.png" />
             <p>Billing </p>
           </button>
+          </Link>
 
         </div>
       </div>

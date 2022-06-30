@@ -8,3 +8,32 @@
 .coid{
     border:1px solid lightgray;padding:5px;
 }
+.table_head{
+    background-color: gainsboro;
+    border: 1px solid lightgray;
+}
+.odr_name{
+    padding-left: 15px;
+}
+.table-button{
+    margin-left: 15px;
+
+}
+.table_image{
+    width:20%;
+}
+.table_image2{
+    width:13%;
+}
+.dollar {
+    background-color: rgb(185, 192, 90);
+    color: #fff;
+    height: 30px;
+    padding: 3px;
+    border: 1px solid olive;
+    margin-left: 20px;
+   
+}
+.inprocess{
+    margin-left: 20px;
+}
