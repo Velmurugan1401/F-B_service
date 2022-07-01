@@ -128,7 +128,7 @@ function Menulist() {
               </button>
 
               <button type="button" class="btn btn-success">
-                <a href="dinein_kitchen.html">
+                <a href="javascript:void(0)">
                   <i class="fa-solid fa-paper-plane"></i>Send to Kitchen
                 </a>
               </button>

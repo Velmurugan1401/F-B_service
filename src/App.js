@@ -15,6 +15,7 @@ import Report from "./componets/report"
 import Takeaway from './componets/takeaway';
 import BBQ from './componets/bbq';
 import Reports from './componets/report';
+import Notfound from "./componets/error"
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/menu/:id" element={<><Header/><Takeaway/></>} />
         <Route path="/bbq" element={<><Header/><BBQ/></>} />
         <Route path="/pos/:id" element={<><Header/><Reports/></>} />
+        <Route path="*" element={<Notfound></Notfound>} />
       </Routes>
     </div>
   );

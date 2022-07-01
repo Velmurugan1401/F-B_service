@@ -15,12 +15,16 @@ a{
     padding-right: 0px;
 }
 .log_out .btn-default {
-    width: 100%;
+    width: 50%;
 }
 .pos_logo_front img{
     width: 100%;
 }
  .btn-default:hover {
+    background-color: #A77A43;
+    border-color: #A77A43;
+}
+.btn-default:focus {
     background-color: #A77A43;
     border-color: #A77A43;
 }

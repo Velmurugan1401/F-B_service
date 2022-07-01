@@ -15,7 +15,7 @@ function Dinein() {
                             state: { Table: 1 }
                         }}>
                             <button type="button" class="table_id table_id_small green_class" value="1">
-                                <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/table_hun.png" alt="table select " />
+                                <img  src={require('../images/table_hun.png')} alt="table select " />
 
                                 <p>TABLE 1</p>
                                 <div class="ribbon green_ribbon"><span>Available</span></div>
@@ -23,12 +23,12 @@ function Dinein() {
                         </Link>
                     </div>
                     <div className='col-1'>
-                        <Link to={{
+                    <Link to={{
                             pathname: "/menu/dinein?table=2",
-                            state: { "Table": 2 }
+                            state: { Table: 2 }
                         }}>
                             <button type="button" class="table_id table_id_small green_class" value="1">
-                                <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/table_hun.png" alt="table select " />
+                                <img  src={require('../images/table_hun.png')} alt="table select " />
 
                                 <p>TABLE 2</p>
                                 <div class="ribbon green_ribbon"><span>Available</span></div>
@@ -36,9 +36,12 @@ function Dinein() {
                         </Link>
                     </div>
                     <div className='col-1'>
-                        <Link to="/menu/dinein?table=3">
+                    <Link to={{
+                            pathname: "/menu/dinein?table=3",
+                            state: { Table: 3 }
+                        }}>
                             <button type="button" class="table_id table_id_small green_class" value="1">
-                                <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/table_hun.png" alt="table select " />
+                                <img  src={require('../images/table_hun.png')} alt="table select " />
 
                                 <p>TABLE 3</p>
                                 <div class="ribbon green_ribbon"><span>Available</span></div>
@@ -51,28 +54,43 @@ function Dinein() {
                         <h2 class="well col-xs-12 mt-4">FIRST FLOOR</h2>
                     </div>
                     <div className='col-1'>
-                        <button type="button" class="table_id table_id_small green_class" value="1">
-                            <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/table_hun.png" alt="table select " />
+                    <Link to={{
+                            pathname: "/menu/dinein?table=1",
+                            state: { Table: 1 }
+                        }}>
+                            <button type="button" class="table_id table_id_small green_class" value="1">
+                                <img  src={require('../images/table_hun.png')} alt="table select " />
 
-                            <p>TABLE 1</p>
-                            <div class="ribbon green_ribbon"><span>Available</span></div>
-                        </button>
+                                <p>TABLE 1</p>
+                                <div class="ribbon green_ribbon"><span>Available</span></div>
+                            </button>
+                        </Link>
                     </div>
                     <div className='col-1'>
-                        <button type="button" class="table_id table_id_small green_class" value="1">
-                            <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/table_hun.png" alt="table select " />
+                    <Link to={{
+                            pathname: "/menu/dinein?table=2",
+                            state: { Table: 2 }
+                        }}>
+                            <button type="button" class="table_id table_id_small green_class" value="1">
+                                <img  src={require('../images/table_hun.png')} alt="table select " />
 
-                            <p>TABLE 2</p>
-                            <div class="ribbon green_ribbon"><span>Available</span></div>
-                        </button>
+                                <p>TABLE 2</p>
+                                <div class="ribbon green_ribbon"><span>Available</span></div>
+                            </button>
+                        </Link>
                     </div>
                     <div className='col-1'>
-                        <button type="button" class="table_id table_id_small green_class" value="1">
-                            <img src="http://192.168.20.4/fobyl/themes/default/admin/assets/images/table_hun.png" alt="table select " />
+                    <Link to={{
+                            pathname: "/menu/dinein?table=3",
+                            state: { Table: 3 }
+                        }}>
+                            <button type="button" class="table_id table_id_small green_class" value="1">
+                                <img  src={require('../images/table_hun.png')} alt="table select " />
 
-                            <p>TABLE 3</p>
-                            <div class="ribbon green_ribbon"><span>Available</span></div>
-                        </button>
+                                <p>TABLE 3</p>
+                                <div class="ribbon green_ribbon"><span>Available</span></div>
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>
